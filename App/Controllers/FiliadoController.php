@@ -38,6 +38,22 @@ class FiliadoController extends Controller
 		}catch(Exeption $e){
 			echo json_encode("erro");
 		}
-
 	}
+
+	public function editar(array $aRequest):void{
+		$aResult = DC::getFiliadoDAO()->getById($aRequest['id']);
+		if($aRequest == null){
+			$this->render("Filiado/Index");
+		}else{
+			$this->aDados = $aResult;
+			$this->render("Filiado/Editar");
+		}
+	}
+
+	public function editarpost(array $aRequest):void {
+		$oFiliado = (new FiliadoFactory())->createFiliadoFromRequest($aRequest);
+		DC::getFiliadoDAO()->editar($oFiliado, $aRequest['id']);
+		Redirect::redirectToAction("index");
+	}
+
 }
