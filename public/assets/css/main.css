@@ -17,6 +17,7 @@ thead{
 	font-weight: bold;
 }
 
+
 #container-table{
 	box-shadow: 2px 5px 10px #ccc;
 	border-radius: 5px;
@@ -26,3 +27,4 @@ thead{
 	opacity: 0;
 	transition: 0.5s;
 }
+

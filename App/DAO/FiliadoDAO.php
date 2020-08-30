@@ -31,4 +31,21 @@ class FiliadoDAO
 		$oStmt->execute();
 	}
 
+	public function getById(int $iId):array {
+		$sQuery = "select * from flo_filiado where flo_id = ?";
+		$oStmt = Conexao::conectar()->prepare($sQuery);
+		$oStmt->bindValue(1, $iId);
+		$oStmt->execute();
+		return $oStmt->fetch(\PDO::FETCH_ASSOC);
+	}
+
+	public function editar(Filiado $oFiliado,int $iId):void {
+		$sQuery = "update flo_filiado set flo_nome = ?, flo_idade = ? where flo_id = ?";
+		$oStmt = Conexao::conectar()->prepare($sQuery);
+		$oStmt->bindValue(1, $oFiliado->getNome());
+		$oStmt->bindValue(2, $oFiliado->getIdade());
+		$oStmt->bindValue(3, $iId);
+		$oStmt->execute();
+	}
+
 }

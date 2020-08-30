@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../public/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../public/assets/css/main.css">
-</head>
-<body>
-
-    <a href="cadastrar">NOVO</a>
+<?php include "App/Views/_Layout/Head.php"; ?>
+    
     <div class="container mt-5" id="container-table">
+        <a class="btn btn-primary mb-2" href="cadastrar">NOVO</a>
+        
         <table class="table">
             <thead>
                 <tr>
                     <td>Nome</td>
                     <td>Idade</td>
+                    <td></td>
                     <td></td>
                 </tr>
             </thead>
@@ -24,11 +18,4 @@
         </table>
     </div>
 
-    <script src="../public/assets/js/jquery/jquery.js"></script>
-    <script type="text/javascript" src="../public/assets/js/Filiado/montaHtml.js"></script>
-    <script type="text/javascript" src="../public/assets/js/Filiado/feedback.js"></script>
-    <script type="text/javascript" src="../public/assets/js/Filiado/filiado-ajax.js">
-    </script>
-
-</body>
-</html>
+<?php include "App/Views/_Layout/Footer.php"; ?>

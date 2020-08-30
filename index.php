@@ -1,6 +1,7 @@
 <?php
 
 	require_once "vendor/autoload.php";
+	use MF\Redirect\Redirect;
 
 	if(!empty($_REQUEST['controller'])) {
         $sNomeController = ucfirst(strtolower($_REQUEST['controller'])) . "Controller";
@@ -20,6 +21,6 @@
 
         }
     } else {
-	    ///controller intanciado por default caso o usuario não especifique
-	    //header('Location: filiado/index');
+		//controller intanciado por default caso o usuario não especifique
+		Redirect::redirectToAction('Location: filiado/index');
     }
